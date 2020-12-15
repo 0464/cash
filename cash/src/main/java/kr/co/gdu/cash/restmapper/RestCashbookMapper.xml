@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="kr.co.gdu.cash.restmapper.RestCashbookMapper">
+	<select id="selectCashbookYearList" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END) january,
+			SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END) february,
+			SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END) march,
+			SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END) april,
+			SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END) may,
+			SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END) june,
+			SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END) july,
+			SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END) august,
+			SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END) september,
+			SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END) october,
+			SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END) november,
+			SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date) = 2019
+		AND cashbook.cashbook_kind = '수입'
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbookYearOutList" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END) january,
+			SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END) february,
+			SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END) march,
+			SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END) april,
+			SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END) may,
+			SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END) june,
+			SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END) july,
+			SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END) august,
+			SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END) september,
+			SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END) october,
+			SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END) november,
+			SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date) = 2019
+		AND cashbook.cashbook_kind = '지출'
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbookYearlyList" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(cashbook_price) '수입'
+		FROM cashbook
+		WHERE cashbook.cashbook_kind = '수입'
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbookYearlyOutList" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(cashbook_price) '지출'
+		FROM cashbook
+		WHERE cashbook.cashbook_kind = '지출'
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbook2018List" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END) january,
+			SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END) february,
+			SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END) march,
+			SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END) april,
+			SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END) may,
+			SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END) june,
+			SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END) july,
+			SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END) august,
+			SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END) september,
+			SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END) october,
+			SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END) november,
+			SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date) = 2018
+		AND cashbook.cashbook_kind = '수입'
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbookCategoryOutList" resultType="java.util.Map">
+		SELECT
+			category_name categoryName,
+			SUM(cashbook_price) '지출'
+		FROM cashbook
+		WHERE cashbook.cashbook_kind = '지출'
+		GROUP BY category_name
+	</select>
+	
+	<select id="selectCashbookInOutList" resultType="java.util.Map">
+		SELECT
+			cashbook_kind 'kind',
+			SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END) january,
+			SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END) february,
+			SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END) march,
+			SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END) april,
+			SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END) may,
+			SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END) june,
+			SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END) july,
+			SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END) august,
+			SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END) september,
+			SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END) october,
+			SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END) november,
+			SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date) = 2018
+		GROUP BY YEAR(cashbook_date), cashbook_kind
+	</select>
+	
+	<select id="selectCashbookYearInOutList" resultType="java.util.Map">
+		SELECT
+			YEAR(cashbook_date) 'year',
+			SUM(CASE WHEN cashbook_kind='수입' THEN cashbook_price END) '수입',
+			SUM(CASE WHEN cashbook_kind='지출' THEN cashbook_price END) '지출'
+		FROM cashbook
+		WHERE cashbook.cashbook_kind
+		GROUP BY YEAR(cashbook_date)
+	</select>
+	
+	<select id="selectCashbookAllOutInList" resultType="java.util.Map">
+		SELECT
+			cashbook_kind 'kind',
+			SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END) january,
+			SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END) february,
+			SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END) march,
+			SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END) april,
+			SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END) may,
+			SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END) june,
+			SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END) july,
+			SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END) august,
+			SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END) september,
+			SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END) october,
+			SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END) november,
+			SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END) december
+		FROM cashbook
+		WHERE YEAR(cashbook_date)
+		GROUP BY cashbook_kind
+	</select>
+	
+</mapper>
