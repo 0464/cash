@@ -13,12 +13,13 @@
 	.sunday {color : #FF0000;}
 </style>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<!-- 다이어리 -->
+	<div class="container">
 	<table class="table" style="text-align:center">
 		<tr class="row">
-			<td class="col-4" >
+			<td class="col-4">
 			<span>이번달 수입 합계</span><hr>
 			<span style="color:blue">${sumIn}</span>
 			</td>
@@ -27,7 +28,7 @@
 				<span style="font-size:20pt"> ${currentYear}년 ${currentMonth} 월 </span>
 				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByMonth/${currentYear}/${currentMonth + 1}'" type="button">다음달</button>
 			</td>
-			<td class="col-4" >
+			<td class="col-4">
 			<span>이번달 수입 합계</span><hr>
 			<span style="color:red">${sumOut}</span>
 			</td>
@@ -36,7 +37,7 @@
 	<div>
 		<table class="table table-bordered table-hover">
 			<thead>
-				<tr>
+				<tr style="text-align:center">
 					<th class="sunday" style="width:100px">일</th>
 					<th style="width:100px">월</th>
 					<th style="width:100px">화</th>
@@ -85,6 +86,7 @@
 				</tr>
 			</tbody>
 		</table>
+	</div>
 	</div>
 </body>
 </html>

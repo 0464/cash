@@ -8,7 +8,11 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+		<div class="container">
 		<ul class="navbar-nav">
+			<li class="nav-item">
+	    		<a class="navbar-brand" href="${pageContext.request.contextPath}/admin/chart1.jsp">통계</a>
+			</li>
 			<li class="nav-item">
 	    		<a class="nav-link" href="${pageContext.request.contextPath}/admin/chart1.jsp">chart1</a>
 			</li>
@@ -37,6 +41,7 @@
 		    	<a class="nav-link" href="${pageContext.request.contextPath}/admin/chart9.jsp">chart9</a>
 			</li>
 		</ul>
+		</div>
 	</nav>
 </body>
 </html>

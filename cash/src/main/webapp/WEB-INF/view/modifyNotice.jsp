@@ -34,8 +34,9 @@
 	});
 </script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<form id="fileUpdateForm" method="post" enctype="multipart/form-data"
 	action="${pageContext.request.contextPath}/admin/modifyNotice">
 		<div class="form-group">
@@ -73,5 +74,6 @@
 	<button class="btn btn-sm btn-outline-dark" type="button" id="submitBtn">수정</button>
 	<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/1'" type="button">취소</button>
 	</form>
+	</div>
 </body>
 </html>

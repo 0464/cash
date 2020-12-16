@@ -12,15 +12,17 @@
 <!-- jQuery  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
+	<div class="container">
 	<!-- chart -->
 	<div>
 		<h3>연도별 수입/지출 통계</h3>
 	</div>
 	<div>
 		<canvas id="dubleLineChart"></canvas>
+	</div>
 	</div>
 </body>
 <script>

@@ -10,8 +10,9 @@
 <!-- jQuery  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>
@@ -19,7 +20,7 @@
 				<th>notice_title</th>
 				<th>notice_content</th>
 				<th>notice_date</th>
-				<th colspan="2" style="width:200px">
+				<th colspan="2" style="width:200px; text-align:center">
 					<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/addNotice'" type="button">공지사항 추가</button>
 				</th>
 			</tr>
@@ -27,12 +28,12 @@
 		<tbody>
 			<c:forEach var="n" items="${noticeList}">
 				<tr>
-					<td>${n.noticeId}</td>
-					<td><a href="${pageContext.request.contextPath}/admin/noticeOne/${n.noticeId}/${currentPage}">${n.noticeTitle}</a></td>
-					<td>${n.noticeContent}</td>
-					<td>${n.noticeDate}</td>
-					<td><button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/modifyNotice/${n.noticeId}'" type="button">수정</button></td>
-					<td><button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/removeNotice/${n.noticeId}'" type="button">삭제</button></td>
+					<td style="vertical-align:middle">${n.noticeId}</td>
+					<td style="vertical-align:middle"><a href="${pageContext.request.contextPath}/admin/noticeOne/${n.noticeId}/${currentPage}">${n.noticeTitle}</a></td>
+					<td style="vertical-align:middle">${n.noticeContent}</td>
+					<td style="vertical-align:middle">${n.noticeDate}</td>
+					<td style="vertical-align:middle"><button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/modifyNotice/${n.noticeId}'" type="button">수정</button></td>
+					<td style="vertical-align:middle"><button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/removeNotice/${n.noticeId}'" type="button">삭제</button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -44,6 +45,7 @@
 	<c:if test="${currentPage<lastPage}">
 		<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/${currentPage+1}'" type="button">다음</button>
 	</c:if>
+	</div>
 	</div>
 </body>
 </html>

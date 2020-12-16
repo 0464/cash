@@ -37,8 +37,9 @@ $(document).ready(function(){
 });
 </script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<form id="fileuploadFrom" method="post" enctype="multipart/form-data"
 	action="${pageContext.request.contextPath}/admin/addNotice">
 		<div class="form-group">
@@ -59,5 +60,6 @@ $(document).ready(function(){
 	<button class="btn btn-sm btn-outline-dark" type="submit">확인</button>
 	<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/1'" type="button">취소</button>
 	</form>
+	</div>
 </body>
 </html>

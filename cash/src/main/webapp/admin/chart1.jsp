@@ -12,20 +12,22 @@
 <!-- jQuery  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
 	<!-- chart -->
-	<div>
-		<h3>2019년 수입 통계</h3>
-	</div>
-	<div>
-		<canvas id="pieChart"></canvas>
-	</div><br>
-	<!-- table -->
-	<button class="btn btn-outline-dark btn-sm" id="cashbookYearTable" type="button">Table</button>
-	<div>
-		<label id="totalTable"></label>
+	<div class="container">
+		<div>
+			<h3>2019년 수입 통계</h3>
+		</div>
+		<div>
+			<canvas id="pieChart"></canvas>
+		</div><br>
+		<!-- table -->
+		<button class="btn btn-outline-dark btn-sm" id="cashbookYearTable" type="button">Table</button>
+		<div>
+			<label id="totalTable"></label>
+		</div>
 	</div>
 <!--
 !!!!!매우중요!!!!!

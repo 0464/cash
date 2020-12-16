@@ -10,9 +10,10 @@
 <!-- jQuery  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<!-- 공지사항 테이블 -->
+	<div class="container">
 	<table class="table table-bordered table-hover">
 		<tr>
 			<td style="width:200px">notice_id</td>
@@ -78,5 +79,6 @@
 		<button class="btn btn-outline-dark btn-sm" type="submit">작성</button>
 		</div>
 	</form>
+	</div>
 </body>
 </html>

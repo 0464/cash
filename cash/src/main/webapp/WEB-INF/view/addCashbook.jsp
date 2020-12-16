@@ -7,8 +7,9 @@
 <title>addCashbook</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<form method="post" action="${pageContext.request.contextPath}/admin/addCashbook">
 		<div class="form-group">
 			<label>cashbook_date</label>
@@ -46,5 +47,6 @@
 		<button class="btn btn-sm btn-outline-dark" type="submit">수입/지출 입력</button>
 		<button class="btn btn-sm btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/now/${currentYear}/${currentMonth}/${currentDay}'">취소</button>
 	</form>
+	</div>
 </body>
 </html>

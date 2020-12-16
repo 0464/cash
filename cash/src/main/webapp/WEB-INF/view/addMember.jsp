@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>addMember</title>
 <!-- 부트스트랩  -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- jQuery  -->
@@ -38,8 +38,9 @@ $(document).ready(function() {
 });
 </script>
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<form method="post" action="${pageContext.request.contextPath}/admin/addMember">
 		<div class="form-group">
 			<label for="id">ID :</label>
@@ -51,5 +52,6 @@ $(document).ready(function() {
 		</div>
 		<button type="submit" class="btn btn-sm btn-outline-dark" id="addMember">회원가입</button>
 	</form>
+	</div>
 </body>
 </html>

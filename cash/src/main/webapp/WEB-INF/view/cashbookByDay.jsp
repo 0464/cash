@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>cashbookByDay</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
+	<div class="container">
 	<table class="table" style="text-align:center">
 		<tr class="row">
-			<td class="col-4" ></td>
+			<td class="col-4"></td>
 			<td class="col-4">
 				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/pre/${currentYear}/${currentMonth}/${currentDay}'" type="button">이전</button>
 				<span style="font-size:20pt">${currentYear}년 ${currentMonth}월 ${currentDay}일</span>
@@ -52,5 +53,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
 </body>
 </html>

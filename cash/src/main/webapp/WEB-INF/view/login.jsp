@@ -4,17 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<div class="container">
 	<ul class="navbar-nav">
 		<li class="nav-item">
-    		<a class="nav-link">Cashbook</a>
+    		<a class="navbar-brand">Cashbook</a>
 		</li>
 	</ul>
+	</div>
 </nav>
+<div class="container">
 <h1>NOTICE</h1>
 	<div>
 		<table class="table table-bordered table-hover">
@@ -46,5 +49,6 @@
 		</div>
 		<button class="btn btn-sm btn-outline-dark" type="submit">로그인</button>
 	</form>
+</div>
 </body>
 </html>
