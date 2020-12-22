@@ -46,7 +46,7 @@
 			<c:choose>
 				<c:when test="${currentPage > 1}">
 					<li class="page-item">
-						<a class="page-link" href="${pageContext.request.contextPath}/admin/noticeList/${currentPage}">처음</a>
+						<a class="page-link" href="${pageContext.request.contextPath}/admin/noticeList/1">처음</a>
 					</li>
 				</c:when>
 				<c:otherwise>

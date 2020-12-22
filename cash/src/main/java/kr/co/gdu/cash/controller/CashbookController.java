@@ -185,9 +185,23 @@ public class CashbookController {
 		if (lastPage == 0) { 
 			currentPage = 0;
 		}
+		// 네비게이션에 표시할 페이지 수
+		int navPerPage = 10;
+		int navFirstPage = currentPage - (currentPage % navPerPage) + 1;
+		int navLastPage = navFirstPage + navPerPage - 1;
+		// 10으로 나누어 떨어질 경우
+		if (currentPage % navPerPage == 0 && currentPage != 0) {
+			navFirstPage = navFirstPage - navPerPage;
+			navLastPage = navLastPage - navPerPage;
+		}
+		
 		model.addAttribute("cashbookList", cashbookList);
 		model.addAttribute("currentPage", currentPage);
 		model.addAttribute("lastPage", lastPage);
+		model.addAttribute("navPerPage", navPerPage);
+		model.addAttribute("navFirstPage", navFirstPage);
+		model.addAttribute("navLastPage", navLastPage);
+		
 		return "cashbookList";
 	}
 }

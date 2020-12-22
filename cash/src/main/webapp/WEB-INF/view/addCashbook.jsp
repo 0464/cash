@@ -9,7 +9,8 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
+	<div class="container"><br>
+	<h1>CASHBOOK ADD</h1><hr>
 	<form method="post" action="${pageContext.request.contextPath}/admin/addCashbook">
 		<div class="form-group">
 			<label>cashbook_date</label>
@@ -17,16 +18,18 @@
 										value="${currentYear}-${currentMonth}-${currentDay}" 
 										readonly="readonly">
 		</div>
-		<label>cashbook_kind</label>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="cashbookKind" value="수입">수입
-			</label>
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="cashbookKind" value="지출">지출
-			</label>
+		<div class="form-group">
+			<label>cashbook_kind</label>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" type="radio" name="cashbookKind" value="수입">수입
+				</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label">
+					<input class="form-check-input" type="radio" name="cashbookKind" value="지출">지출
+				</label>
+			</div>
 		</div>
 		<div class="form-group">
 			<label>category_name</label>
@@ -44,7 +47,7 @@
 			<label>cashbook_content</label>
 			<input class="form-control" type="text" name="cashbookContent">
 		</div>
-		<button class="btn btn-sm btn-outline-dark" type="submit">수입/지출 입력</button>
+		<button class="btn btn-sm btn-outline-info" type="submit">수입/지출 입력</button>
 		<button class="btn btn-sm btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/now/${currentYear}/${currentMonth}/${currentDay}'">취소</button>
 	</form>
 	</div>

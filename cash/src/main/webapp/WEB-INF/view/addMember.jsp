@@ -40,18 +40,25 @@ $(document).ready(function() {
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
-	<form method="post" action="${pageContext.request.contextPath}/admin/addMember">
-		<div class="form-group">
-			<label for="id">ID :</label>
-			<input type="text" class="form-control" placeholder="Enter id" name="id" id="id">
+	<div class="container"><br>
+	<h1>MEMBER ADD</h1><hr>
+	<div class="row">
+		<div class="col-4">
+			<form class="was-validated" method="post" action="${pageContext.request.contextPath}/admin/addMember">
+				<div class="form-group">
+					<label for="id">ID :</label>
+					<input type="text" class="form-control" placeholder="Enter id" name="id" id="id" required>
+					<div class="invalid-feedback">아이디를 입력해주세요.</div>
+				</div>
+				<div class="form-group">
+					<label for="pw">PW :</label>
+					<input type="password" class="form-control" placeholder="Enter pw" name="pw" id="pw" required>
+					<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+				</div>
+				<button type="submit" class="btn btn-sm btn-outline-info" id="addMember">회원가입</button>
+			</form>
 		</div>
-		<div class="form-group">
-			<label for="pw">PW :</label>
-			<input type="password" class="form-control" placeholder="Enter pw" name="pw" id="pw">
-		</div>
-		<button type="submit" class="btn btn-sm btn-outline-dark" id="addMember">회원가입</button>
-	</form>
+	</div>
 	</div>
 </body>
 </html>

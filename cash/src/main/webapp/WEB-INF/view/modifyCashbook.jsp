@@ -9,7 +9,8 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
+	<div class="container"><br>
+	<h1>CASHBOOK MODIFY</h1><hr>
 	<form method="post" action="${pageContext.request.contextPath}/admin/modifyCashbookByDay">
 	<div class="form-group">
 		<label>cashbook_id</label>
@@ -48,7 +49,7 @@
 		<label>cashbook_content</label>
 		<textarea class="form-control" rows="3" cols="50" name="cashbookContent">${cashbook.cashbookContent}</textarea>
 	</div>
-	<button class="btn btn-sm btn-outline-dark" type="submit">수입/지출 수정</button>
+	<button class="btn btn-sm btn-outline-info" type="submit">수입/지출 수정</button>
 	<button class="btn btn-sm btn-outline-dark" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/now/${currentYear}/${currentMonth}/${currentDay}'">취소</button>
 	</form>
 	</div>
