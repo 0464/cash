@@ -16,35 +16,33 @@
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
 	<!-- 다이어리 -->
-	<div class="container">
-	<table class="table" style="text-align:center">
-		<tr class="row">
-			<td class="col-4">
+	<div class="container"><br>
+	<div class="row" style="text-align:center">
+		<div class="col-4">
 			<span>이번달 수입 합계</span><hr>
 			<span style="color:blue">${sumIn}</span>
-			</td>
-			<td class="col-4">
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByMonth/${currentYear}/${currentMonth - 1}'" type="button">이전달</button>
-				<span style="font-size:20pt"> ${currentYear}년 ${currentMonth} 월 </span>
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByMonth/${currentYear}/${currentMonth + 1}'" type="button">다음달</button>
-			</td>
-			<td class="col-4">
+		</div>
+		<div class="col-4">
+			<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByMonth/${currentYear}/${currentMonth - 1}'" type="button">이전달</button>
+			<label style="font-size:20pt"> ${currentYear}년 ${currentMonth}월 </label>
+			<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByMonth/${currentYear}/${currentMonth + 1}'" type="button">다음달</button>
+		</div>
+		<div class="col-4">
 			<span>이번달 수입 합계</span><hr>
 			<span style="color:red">${sumOut}</span>
-			</td>
-		</tr>
-	</table>
-	<div>
+		</div>
+	</div>
+	<div><br>
 		<table class="table table-bordered table-hover">
 			<thead>
 				<tr style="text-align:center">
-					<th class="sunday" style="width:100px">일</th>
-					<th style="width:100px">월</th>
-					<th style="width:100px">화</th>
-					<th style="width:100px">수</th>
-					<th style="width:100px">목</th>
-					<th style="width:100px">금</th>
-					<th style="width:100px">토</th>
+					<th class="sunday" style="width:100px">SUN</th>
+					<th style="width:100px">MON</th>
+					<th style="width:100px">TUE</th>
+					<th style="width:100px">WED</th>
+					<th style="width:100px">THU</th>
+					<th style="width:100px">FRI</th>
+					<th style="width:100px">SAT</th>
 				</tr>
 			</thead>
 			<tbody>

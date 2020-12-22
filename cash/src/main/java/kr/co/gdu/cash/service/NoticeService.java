@@ -18,9 +18,9 @@ public class NoticeService {
 	@Autowired private CashbookMapper cashbookMapper;
 	@Autowired private NoticefileMapper noticefileMapper;
 	// aws http://54.180.138.45/cash/
-	private final String PATH ="/home/ubuntu/tomcat9/webapps/cash/src/main/webapp/upload/";
+	// private final String PATH ="/home/ubuntu/tomcat9/webapps/cash/src/main/webapp/upload/";
 	// home
-	// private final String PATH ="D:\\git\\git\\cash\\src\\main\\webapp\\upload\\";
+	private final String PATH ="D:\\git\\git-cash\\cash\\src\\main\\webapp\\upload";
 	// goodee
 	// private final String PATH ="D:\\git\\maven.1606201723605\\cash\\src\\main\\webapp\\upload\\";
 

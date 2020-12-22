@@ -39,7 +39,8 @@ $(document).ready(function(){
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
+	<div class="container"><br>
+	<h1>NOTICE ADD</h1><hr>
 	<form id="fileuploadFrom" method="post" enctype="multipart/form-data"
 	action="${pageContext.request.contextPath}/admin/addNotice">
 		<div class="form-group">
@@ -52,12 +53,12 @@ $(document).ready(function(){
 		</div>
 		<div class="form-group">
 			<label>notice_file</label>
-			<button class="btn btn-outline-dark btn-sm" type="button" id="addBtn">파일추가</button>
-			<button class="btn btn-outline-dark btn-sm" type="button" id="delBtn">파일삭제</button>
+			<button class="btn btn-outline-info btn-sm" type="button" id="addBtn">파일추가</button>
+			<button class="btn btn-outline-danger btn-sm" type="button" id="delBtn">파일삭제</button>
 			<div id="fileinput">
 			</div>
 		</div>
-	<button class="btn btn-sm btn-outline-dark" type="submit">확인</button>
+	<button class="btn btn-sm btn-outline-info" type="submit">확인</button>
 	<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/1'" type="button">취소</button>
 	</form>
 	</div>

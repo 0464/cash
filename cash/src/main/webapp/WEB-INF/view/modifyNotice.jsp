@@ -36,7 +36,8 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
+	<div class="container"><br>
+	<h1>NOTICE MODIFY</h1><hr>
 	<form id="fileUpdateForm" method="post" enctype="multipart/form-data"
 	action="${pageContext.request.contextPath}/admin/modifyNotice">
 		<div class="form-group">
@@ -57,21 +58,25 @@
 		</div>
 		<div class="form-group">
 			<label>notice_file_add</label>
+			<table class="table table-bordered table-hover">
 			<c:forEach var="nf" items="${notice.noticefile}">
 			<c:if test="${nf.noticefileName != null}">
-				<div class="form-group">
-					<label>기존 파일</label>
-					<a href="${pageContext.request.contextPath}/upload/${nf.noticefileName}">${nf.noticefileName}</a>
-					<button class="btn btn-outline-dark btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/removeNoticefile/${nf.noticeId}/${nf.noticefileId}'">파일삭제</button>
-				</div>
+				<tr>
+					<td>
+						<label>기존 파일</label>
+						<a href="${pageContext.request.contextPath}/upload/${nf.noticefileName}">${nf.noticefileName}</a>
+						<button class="btn btn-outline-danger btn-sm" type="button" onclick="location.href='${pageContext.request.contextPath}/admin/removeNoticefile/${nf.noticeId}/${nf.noticefileId}'">삭제</button>
+					</td>
+				</tr>
 			</c:if>
 			</c:forEach>
+			</table>
 			<div id="fileinput">
-				<button class="btn btn-outline-dark btn-sm" type="button" id="addBtn">파일추가</button>
-				<button class="btn btn-outline-dark btn-sm" type="button" id="delBtn">파일삭제</button>
+				<button class="btn btn-outline-info btn-sm" type="button" id="addBtn">파일추가</button>
+				<button class="btn btn-outline-danger btn-sm" type="button" id="delBtn">파일삭제</button>
 			</div>
 		</div>
-	<button class="btn btn-sm btn-outline-dark" type="button" id="submitBtn">수정</button>
+	<button class="btn btn-sm btn-outline-warning" type="button" id="submitBtn">수정</button>
 	<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/1'" type="button">취소</button>
 	</form>
 	</div>

@@ -37,33 +37,34 @@
 				</div>
 				</c:forEach>
 			</div>
-		</div>
+		</div><hr>
 		<!-- 공지 -->
 		<br>
-		<table class="table" style="text-align:center;">
-		<tr>
-		<td style="vertical-align:middle">
-		<h2>NOTICE <button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/noticeList/${currentPage}'" type="button">more</button></h2>
-		</td>
-		</tr>
-		</table>
-		<div>
-			<table class="table table-bordered table-hover">
-				<thead>
-					<tr>
-						<th style="width:150px">notice_id</th>
-						<th>notice_title</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="n" items="${noticeList}">
-						<tr>
-							<td>${n.noticeId}</td>
-							<td>${n.noticeTitle}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+			<h2 style="text-align:center">NOTICE<br><a style="font-size:14pt; text-align:center" href="${pageContext.request.contextPath}/admin/noticeList/${currentPage}">more</a></h2>
+			
+				<div>
+					<table class="table table-bordered table-hover" style="text-align:center">
+						<thead>
+							<tr>
+								<th style="width:100px">notice_id</th>
+								<th>notice_title</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="n" items="${noticeList}">
+								<tr>
+									<td>${n.noticeId}</td>
+									<td>${n.noticeTitle}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-3"></div>
 		</div>
 	</div>
 </body>

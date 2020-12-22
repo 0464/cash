@@ -9,20 +9,19 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>
-	<div class="container">
-	<table class="table" style="text-align:center">
-		<tr class="row">
-			<td class="col-4"></td>
-			<td class="col-4">
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/pre/${currentYear}/${currentMonth}/${currentDay}'" type="button">이전</button>
-				<span style="font-size:20pt">${currentYear}년 ${currentMonth}월 ${currentDay}일</span>
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/cashbookByDay/next/${currentYear}/${currentMonth}/${currentDay}'" type="button">다음</button>
-			</td>
-			<td class="col-4">
-				<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/addCashbook/${currentYear}/${currentMonth}/${currentDay}'" type="button">수입/지출 입력</button>
-			</td>
-		</tr>
-	</table>
+	<div class="container"><br>
+	<div class="row">
+		<div class="col-4">
+		</div>
+		<div class="col-4" style="text-align:center">
+			<a class="btn btn-sm btn-outline-dark" href="${pageContext.request.contextPath}/admin/cashbookByDay/pre/${currentYear}/${currentMonth}/${currentDay}">이전</a>
+			<label style="font-size:20pt">${currentYear}년 ${currentMonth}월 ${currentDay}일</label>
+			<a class="btn btn-sm btn-outline-dark" href="${pageContext.request.contextPath}/admin/cashbookByDay/next/${currentYear}/${currentMonth}/${currentDay}">다음</a>
+		</div>
+		<div class="col-4" style="text-align:right">
+			<a class="btn btn-sm btn-outline-info" href="${pageContext.request.contextPath}/admin/addCashbook/${currentYear}/${currentMonth}/${currentDay}">수입/지출 입력</a>
+		</div>
+	</div><hr>
 	<table class="table table-bordered table-hover">
 		<thead>
 			<tr>
@@ -44,10 +43,10 @@
 					<td>${c.cashbookPrice}</td>
 					<td>${c.cashbookContent}</td>
 					<td>
-						<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/modifyCashbookByDay/${c.cashbookId}/${currentYear}/${currentMonth}/${currentDay}'" type="button">수정</button>
+						<a class="btn btn-sm btn-outline-warning" href="${pageContext.request.contextPath}/admin/modifyCashbookByDay/${c.cashbookId}/${currentYear}/${currentMonth}/${currentDay}">수정</a>
 					</td>
 					<td>
-						<button class="btn btn-sm btn-outline-dark" onclick="location.href='${pageContext.request.contextPath}/admin/removeCashbookByDay/${c.cashbookId}'" type="button">삭제</button>
+						<a class="btn btn-sm btn-outline-danger" href="${pageContext.request.contextPath}/admin/removeCashbookByDay/${c.cashbookId}">삭제</a>
 					</td>
 				</tr>
 			</c:forEach>
